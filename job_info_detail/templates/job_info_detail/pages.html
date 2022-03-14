@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../../../static/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="../../../static/assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        
+    <style>
+        body{
+            font-family: "맑은 고딕", 돋움;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .div_ms{
+            width:auto;
+            margin-top: 50px;
+            margin-left:40px;
+            margin-right: 40px;
+            text-align: center;
+            line-height: 50px;
+            border:1px solid #333;
+
+        }
+        .table_ms{
+            margin-top: 20px;
+            margin-left : auto;
+            margin-right : auto;
+        }
+        .th_1{
+            width : 100px;
+            border: 1px solid #333
+        }
+        .th_2{
+            width : 100px;
+            border: 1px solid #333
+        }
+        .cation_1{
+            font-size : 2em;
+            font-weight: bold;
+        }
+        .div_ms_ms{
+            width:auto;
+            margin-left: 40px;
+            margin-right: 40px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid #333;
+            
+            
+        }
+
+        .td_long{
+            text-align: left;
+            border : 1px solid #333
+        }
+        .tbody_ms{
+            display:flex;
+        }
+        .th_td_ms{
+            display:block;
+        }
+        .a_margin{
+            margin-left:100px;
+        }
+
+        .ul_1_ms{
+            text-align: right;
+            list-style: none;
+            margin-right : 40px;
+        }
+        .li_1_ms{
+            color:blue;
+        }
+    </style>
+</head>
+<body id="page-top">
+    <nav class="navbar" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="job_info_detail/../../../../"><img src="../../../static/assets/img/navbar-logo.svg" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="page-section" id="services">
+    <a class="a_margin" href="../">이전 페이지로 돌아가기</a>
+    <div class="div_ms" >
+        <table border="1" class="table_ms">
+            <cation class="cation_1">{{texts.job_name}}</cation><br/>
+            <tr >결혼정보회사 등급 : {{texts.matching_grade}}</tr>
+            <thread>
+                <tr>
+                    <th class="th_1">평균연봉</th>
+                    <th class="th_1">근무형태</th>
+                    <th>취업조건</th>
+                    <th class="th_1">투잡가능성</th>
+                </tr>
+            </thread>
+            <tbody>
+                <tr>
+                    <td>{{texts.salary}}만원</td>
+                    <td>{{texts.working_pattern}}</td>
+                    <td class="td_long">{{texts.requirement}}</td>
+                    <td>{{texts.twojob_possiblity}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="div_ms_ms">
+        
+        <table>
+            <tr>
+                <th class="th_2">하는일</td>
+                <td class="td_long">{{texts.mainly_do}}</td>
+            </tr>
+            <tr>
+                <th class="th_2">근무 환경</td>
+                <td class="td_long">{{texts.working_env}}</td>
+            </tr>
+            <tr>
+                <th class="th_2">복지 및 연봉</td>
+                <td class="td_long">{{texts.welfare}}</td>
+            </tr>
+        </table>
+        
+    </div>
+    <ul class="ul_1_ms">
+        <li class="li_1_ms"><a href="https://www.jobkorea.co.kr/Search/?stext={{texts.job_name}}">잡코리아</a></li>
+        <li class="li_1_ms"><a href="https://www.saramin.co.kr/zf_user/search?searchword={{texts.job_name}}">사람인</a></li>
+        <li class="li_1_ms"><a href="https://www.wanted.co.kr/search?query={{texts.job_name}}">원티드랩</a></li>
+    </ul></section>
+</body>
+</html>

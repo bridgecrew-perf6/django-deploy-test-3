@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Agency - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../static/assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../static/css/styles.css" rel="stylesheet" />
+        <style>
+            
+            .selBox_ms11{
+                margin-top: 20px;
+                margin-left : 100px;
+                margin-right : 100px;
+                word-break: break-all;
+                height: 500px;
+                border: 1px solid #999;
+            }
+            .div_search_ms{
+                margin-left : 100px;
+                margin-right : 100px;
+                height: 100px;
+                text-align:center;
+            }
+
+            .ul_ms11{
+                list-style: none;
+                height: 27px;
+                font-size:0.75em;
+            }
+
+            .li_ms11{
+                width :200px;
+                height :22px;
+                margin-top: 10px;
+                margin-right: 3px;
+            }
+            #btn-search{
+                background-color: white;
+                border-radius: 10px;
+                font-family:"맑은 고딕";
+                width: 100px;
+                margin-top:20px;
+            }
+            .my-3-ms{
+                margin-top : 20px;
+                margin-left : 50px;
+            }
+            .div-ms-ms{
+                
+                float: left; 
+                width: 33%;
+            }
+            .label_1_ms{
+                font-size:1.3em;
+            }
+            .a_margin{
+                margin-left:100px;
+                
+            }
+
+        </style>
+        <script>
+            window.addEventListener('load',function(event){
+                document.getElementById('btn-search').addEventListener('click',function(event){
+                    
+
+                })
+            })
+        </script>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="job_info_detail/../../../../"><img src="../static/assets/img/navbar-logo.svg" alt="..." /></a>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <a href="../" class="a_margin">이전 페이지</a>
+            <div>
+                <h3 class="my-3-ms">직업별 취업 전후 정보</h3>
+            </div>
+            <div class="selBox_ms11"> <!-- block3 -->
+                <ul class="ul_ms11">
+                    
+                    <form action="/job_info_detail/detail/" method="post">  
+                        {% csrf_token %}   
+                        {% for tmp in job_list %}
+                            <div class="div-ms-ms">
+                            <input type="radio" name = "searchEmpCode" id = "search{{ tmp.id }}" value="{{ tmp.id }}" >
+                            <label class="label_1_ms" for ="search{{ tmp.id }}">{{ tmp.job_name }}</label><br></div>
+                        {% endfor %}
+                </ul>
+            </div>
+            <div class="div_search_ms">
+                <input type = "submit" value = "검색" id="btn-search">
+                </form>
+            </div>
+            
+            
+
+        </section>
